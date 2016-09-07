@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/xst"
+elaborate
+-ifn Instr_Memory.prj
+-ifmt mixed
