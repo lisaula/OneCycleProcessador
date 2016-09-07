@@ -22,6 +22,13 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Processador.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Instr_Memory.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Instr_Memory.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Instr_Memory.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Main.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Main.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Main.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Tb_ALU_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Tb_ALU_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Tb_ALU_isim_beh.wdb"/>
@@ -31,6 +38,7 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
@@ -43,6 +51,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="ALU.v"/>
       <outfile xil_pn:name="Tb_ALU.v"/>
     </transform>
@@ -57,6 +66,7 @@
     <transform xil_pn:end_ts="1472931700" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5286744585562741623" xil_pn:start_ts="1472931700">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1472932253" xil_pn:in_ck="1706042933287714945" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1472932253">
       <status xil_pn:value="SuccessfullyRun"/>
