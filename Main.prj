@@ -1,2 +1,7 @@
+verilog work "UnitControl.v"
+verilog work "SyncRAM.v"
+verilog work "Reg_File.v"
+verilog work "JumpLogic.v"
 verilog work "Instr_Memory.v"
+verilog work "ALU.v"
 verilog work "Main.v"

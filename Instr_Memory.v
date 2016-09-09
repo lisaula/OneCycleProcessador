@@ -8,7 +8,7 @@ module Instr_Memory(
 	output reg [15:0] instruction_out
     );
 
-	reg [15:0]instrunction_mem[0:254];
+	reg [15:0]instrunction_mem[0:255];
 	
 	always @(posedge clk)
 	begin

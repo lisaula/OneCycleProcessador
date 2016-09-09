@@ -1,2 +1,7 @@
-MO Instr_Memory NULL Instr_Memory.v vlg00/_instr___memory.bin 1473282587
-MO Main NULL Main.v vlg0D/_main.bin 1473282587
+MO UnitControl NULL UnitControl.v vlg01/_unit_control.bin 1473379717
+MO Reg_File NULL Reg_File.v vlg29/_reg___file.bin 1473379717
+MO Instr_Memory NULL Instr_Memory.v vlg00/_instr___memory.bin 1473379717
+MO JumpLogic NULL JumpLogic.v vlg5E/_jump_logic.bin 1473379717
+MO Main NULL Main.v vlg0D/_main.bin 1473379717
+MO SyncRAM NULL SyncRAM.v vlg71/_sync_r_a_m.bin 1473379717
+MO ALU NULL ALU.v vlg2A/_a_l_u.bin 1473379717
