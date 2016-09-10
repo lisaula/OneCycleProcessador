@@ -7,13 +7,16 @@ module Reg_File(
 	input clk, 
 	input write_enable,
 	output [7:0] read_data1,
-	output [7:0] read_data2
+	output [7:0] read_data2,
+	input [1:0]reg_address,
+	output [7:0]registro
     );
 	 
 	 reg [7:0] registers[0:3];
 	 
 	 assign read_data1 = registers[read_addr1];
 	 assign read_data2 = registers[read_addr2];
+	 assign registro = registers[reg_address];
 	 
 	 always @(posedge clk)
 	 begin

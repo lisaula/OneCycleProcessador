@@ -1,0 +1,78 @@
+//clk
+Net "clk" LOC="B8";	
+
+//instruction -> J4 && J3	
+//j3.1..4
+Net "data_in[4]" LOC ="D15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[5]" LOC ="G16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[6]" LOC ="J16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[7]" LOC ="K15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//j3.7 .. 10
+Net "data_in[0]" LOC ="C16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[1]" LOC ="G15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[2]" LOC ="H15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[3]" LOC ="K16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//j4.1..4
+Net "data_in[12]" LOC ="M16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[13]" LOC ="L14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[14]" LOC ="P15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[15]" LOC ="R15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//J4.7..10
+Net "data_in[8]" LOC ="L15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[9]" LOC ="N16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[10]" LOC ="P16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "data_in[11]" LOC ="R16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//j2.1 && j2.2
+Net "registro[6]" LOC ="H14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "registro[7]" LOC ="J13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//reg_adress -> j2.3 && .4
+Net "reg_address[0]" LOC ="K13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "reg_address[1]" LOC ="H11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//registro j2.7 .. j2.10
+Net "registro[2]" LOC ="H12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "registro[3]" LOC ="J14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "registro[4]" LOC ="K14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "registro[5]" LOC ="K12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//Overflow flag -> j1.1
+Net "Flags[0]" LOC ="C15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//zero flag j1.2
+Net "Flags[2]" LOC ="F13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//j1.3 && .4
+Net "registro[0]" LOC ="F14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "registro[1]" LOC ="G13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//Instruction_Write_enable -> J1.9
+Net "isntruction_wenable" LOC ="F15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//Sign Flag -> J1.10
+Net "Flags[1]" LOC ="G14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//j5.1 .. .4
+Net "inst_add[4]" LOC ="T13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[5]" LOC ="R11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[6]" LOC ="T8" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[7]" LOC ="P6"  | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//j5.7 .. .10
+Net "inst_add[0]" LOC ="P14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[1]" LOC ="R13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[2]" LOC ="N10" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+Net "inst_add[3]" LOC ="R6" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+
+//prueba
+Net "LEDS[0]" LOC="C11" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[1]" LOC="D11" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[2]" LOC="B11" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[3]" LOC="A12" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[4]" LOC="A13" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[5]" LOC="B13" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[6]" LOC="A14" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+Net "LEDS[7]" LOC="B14" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+
+
+Net "btnLEDS" LOC="J11" | IOSTANDARD = LVCMOS33;
+
+Net "ledsito" LOC="D10" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;

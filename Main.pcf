@@ -1,0 +1,57 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Sep 09 20:38:51 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "Flags<0>" LOCATE = SITE "C15" LEVEL 1;
+COMP "Flags<1>" LOCATE = SITE "G14" LEVEL 1;
+COMP "Flags<2>" LOCATE = SITE "F13" LEVEL 1;
+COMP "registro<0>" LOCATE = SITE "F14" LEVEL 1;
+COMP "registro<1>" LOCATE = SITE "G13" LEVEL 1;
+COMP "registro<2>" LOCATE = SITE "H12" LEVEL 1;
+COMP "registro<3>" LOCATE = SITE "J14" LEVEL 1;
+COMP "registro<4>" LOCATE = SITE "K14" LEVEL 1;
+COMP "registro<5>" LOCATE = SITE "K12" LEVEL 1;
+COMP "registro<6>" LOCATE = SITE "H14" LEVEL 1;
+COMP "registro<7>" LOCATE = SITE "J13" LEVEL 1;
+COMP "btnLEDS" LOCATE = SITE "J11" LEVEL 1;
+COMP "data_in<0>" LOCATE = SITE "C16" LEVEL 1;
+COMP "data_in<1>" LOCATE = SITE "G15" LEVEL 1;
+COMP "data_in<2>" LOCATE = SITE "H15" LEVEL 1;
+COMP "data_in<3>" LOCATE = SITE "K16" LEVEL 1;
+COMP "data_in<4>" LOCATE = SITE "D15" LEVEL 1;
+COMP "data_in<5>" LOCATE = SITE "G16" LEVEL 1;
+COMP "data_in<6>" LOCATE = SITE "J16" LEVEL 1;
+COMP "data_in<7>" LOCATE = SITE "K15" LEVEL 1;
+COMP "data_in<8>" LOCATE = SITE "L15" LEVEL 1;
+COMP "data_in<9>" LOCATE = SITE "N16" LEVEL 1;
+COMP "ledsito" LOCATE = SITE "D10" LEVEL 1;
+COMP "data_in<10>" LOCATE = SITE "P16" LEVEL 1;
+COMP "data_in<11>" LOCATE = SITE "R16" LEVEL 1;
+COMP "data_in<12>" LOCATE = SITE "M16" LEVEL 1;
+COMP "data_in<13>" LOCATE = SITE "L14" LEVEL 1;
+COMP "data_in<14>" LOCATE = SITE "P15" LEVEL 1;
+COMP "data_in<15>" LOCATE = SITE "R15" LEVEL 1;
+COMP "reg_address<0>" LOCATE = SITE "K13" LEVEL 1;
+COMP "reg_address<1>" LOCATE = SITE "H11" LEVEL 1;
+COMP "isntruction_wenable" LOCATE = SITE "F15" LEVEL 1;
+COMP "LEDS<0>" LOCATE = SITE "C11" LEVEL 1;
+COMP "LEDS<1>" LOCATE = SITE "D11" LEVEL 1;
+COMP "LEDS<2>" LOCATE = SITE "B11" LEVEL 1;
+COMP "LEDS<3>" LOCATE = SITE "A12" LEVEL 1;
+COMP "LEDS<4>" LOCATE = SITE "A13" LEVEL 1;
+COMP "LEDS<5>" LOCATE = SITE "B13" LEVEL 1;
+COMP "LEDS<6>" LOCATE = SITE "A14" LEVEL 1;
+COMP "LEDS<7>" LOCATE = SITE "B14" LEVEL 1;
+COMP "inst_add<0>" LOCATE = SITE "P14" LEVEL 1;
+COMP "inst_add<1>" LOCATE = SITE "R13" LEVEL 1;
+COMP "inst_add<2>" LOCATE = SITE "N10" LEVEL 1;
+COMP "inst_add<3>" LOCATE = SITE "R6" LEVEL 1;
+COMP "inst_add<4>" LOCATE = SITE "T13" LEVEL 1;
+COMP "inst_add<5>" LOCATE = SITE "R11" LEVEL 1;
+COMP "inst_add<6>" LOCATE = SITE "T8" LEVEL 1;
+COMP "inst_add<7>" LOCATE = SITE "P6" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

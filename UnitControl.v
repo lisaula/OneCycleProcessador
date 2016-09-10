@@ -12,7 +12,8 @@ module UnitControl(
 	output reg is_jnz,
 	output reg is_jl,
 	output reg is_jg,
-	output reg is_jump
+	output reg is_jump,
+	output reg [1:0] writeData_select
     );
 	 
 	 always @(opcode)
@@ -32,6 +33,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h1: //add
 				begin
@@ -47,6 +49,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h2: //sub
 				begin
@@ -62,7 +65,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
-
+					writeData_select <= 2'b00;
 				end
 			5'h3: //or
 				begin
@@ -78,7 +81,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
-					
+					writeData_select <= 2'b00;
 				end
 			5'h4: //and
 				begin
@@ -94,6 +97,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h5: //xor
 				begin
@@ -108,7 +112,8 @@ module UnitControl(
 					is_jnz<= 1'b0;
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
-					is_jump<= 1'b0;					
+					is_jump<= 1'b0;
+					writeData_select <= 2'b00;					
 				end
 			5'h6: //mov
 				begin
@@ -124,6 +129,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b01;//mov
 				end
 			5'h7: //lw
 				begin
@@ -139,6 +145,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b10;//mem acc
 				end
 			5'h8: //sw
 				begin
@@ -154,13 +161,14 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h9: //li
 				begin
 					reg_write <= 1'b1;
 					is_move<= 1'b0;
 					is_mem_access<= 1'b0;
-					is_imm<= 1'b1;
+					is_imm<= 1'b0;
 					alu_function<= 3'h0;
 					flags_write<= 1'b0;
 					dm_write_enable<=1'b0;
@@ -169,6 +177,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b11;//imm
 				end
 			5'hA: //addi
 				begin
@@ -184,6 +193,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'hB: //subi
 				begin
@@ -199,6 +209,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'hC: //cmp
 				begin
@@ -214,6 +225,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'hD: //jz
 				begin
@@ -229,6 +241,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'hE: //jnz
 				begin
@@ -244,6 +257,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'hF: //jg
 				begin
@@ -259,6 +273,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b1;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h10: //jl
 				begin
@@ -274,6 +289,7 @@ module UnitControl(
 					is_jl<= 1'b1;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 			5'h11: //jump
 				begin
@@ -289,6 +305,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b1;
+					writeData_select <= 2'b00;
 				end
 			default:
 				begin
@@ -304,6 +321,7 @@ module UnitControl(
 					is_jl<= 1'b0;
 					is_jg<= 1'b0;
 					is_jump<= 1'b0;
+					writeData_select <= 2'b00;
 				end
 		endcase
 	 end
