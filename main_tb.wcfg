@@ -127,6 +127,7 @@
       <wvobject fp_name="/tb_Main/main/IM/instrunction_mem[5]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[5,15:0]</obj_property>
          <obj_property name="ObjectShortName">instrunction_mem[5,15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Main/main/IM/instrunction_mem[6]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[6,15:0]</obj_property>

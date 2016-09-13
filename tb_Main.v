@@ -44,6 +44,9 @@ module tb_Main(
 		inst_add=4;
 		data_in=16'h0880;
 		#20;
+		inst_add=5;
+		data_in=16'h500a;
+		#20;
 		isntruction_wenable=0;
 		reg_address=0;
 		#20;
@@ -57,6 +60,8 @@ module tb_Main(
 		reg_address=0;
 		#20;
 		reg_address=1;
+		#20;
+		reg_address=0;
 		
 	end
 	
