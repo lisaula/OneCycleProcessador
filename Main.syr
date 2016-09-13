@@ -113,10 +113,10 @@ Compiling verilog file "Reg_File.v" in library work
 Module <select_writeData> compiled
 Compiling verilog file "JumpLogic.v" in library work
 Module <Reg_File> compiled
-Compiling verilog file "Instr_Memory.v" in library work
+Compiling verilog file "InstructionMemory.v" in library work
 Module <JumpLogic> compiled
 Compiling verilog file "ALU.v" in library work
-Module <Instr_Memory> compiled
+Module <InstructionMemory> compiled
 Compiling verilog file "Main.v" in library work
 Module <ALU> compiled
 Module <Main> compiled
@@ -129,7 +129,7 @@ Analysis of file <"Main.prj"> succeeded.
 =========================================================================
 Analyzing hierarchy for module <Main> in library <work>.
 
-Analyzing hierarchy for module <Instr_Memory> in library <work>.
+Analyzing hierarchy for module <InstructionMemory> in library <work>.
 
 Analyzing hierarchy for module <UnitControl> in library <work>.
 
@@ -156,8 +156,8 @@ Analyzing top module <Main>.
 WARNING:Xst:863 - "Main.v" line 9: Name conflict (<flags> and <Flags>, renaming flags as flags_rnm0).
 Module <Main> is correct for synthesis.
  
-Analyzing module <Instr_Memory> in library <work>.
-Module <Instr_Memory> is correct for synthesis.
+Analyzing module <InstructionMemory> in library <work>.
+Module <InstructionMemory> is correct for synthesis.
  
 Analyzing module <UnitControl> in library <work>.
 Module <UnitControl> is correct for synthesis.
@@ -190,14 +190,10 @@ Module <select_writeData> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
-INFO:Xst:2679 - Register <contador> in unit <Main> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
 
-Synthesizing Unit <Instr_Memory>.
-    Related source file is "Instr_Memory.v".
-    Found 256x16-bit dual-port RAM <Mram_instrunction_mem> for signal <instrunction_mem>.
-    Summary:
-	inferred   1 RAM(s).
-Unit <Instr_Memory> synthesized.
+Synthesizing Unit <InstructionMemory>.
+    Related source file is "InstructionMemory.v".
+Unit <InstructionMemory> synthesized.
 
 
 Synthesizing Unit <UnitControl>.
@@ -258,13 +254,16 @@ Unit <select_writeData> synthesized.
 
 Synthesizing Unit <Main>.
     Related source file is "Main.v".
+WARNING:Xst:647 - Input <boton> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnLEDS> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <data_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inst_add> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <is_move> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <is_mem_access> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <Inst<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:737 - Found 5-bit latch for signal <contador>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 3-bit register for signal <ALU_Flags>.
     Found 8-bit up counter for signal <PC>.
-    Found 8-bit comparator less for signal <PC$cmp_lt0000> created at line 88.
+    Found 8-bit comparator less for signal <PC$cmp_lt0000> created at line 90.
     Summary:
 	inferred   1 Counter(s).
 	inferred   3 D-type flip-flop(s).
@@ -276,8 +275,7 @@ Unit <Main> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
- 256x16-bit dual-port RAM                              : 1
+# RAMs                                                 : 4
  256x8-bit single-port RAM                             : 1
  4x8-bit dual-port RAM                                 : 3
 # Adders/Subtractors                                   : 2
@@ -288,9 +286,8 @@ Macro Statistics
 # Registers                                            : 2
  3-bit register                                        : 1
  8-bit register                                        : 1
-# Latches                                              : 3
+# Latches                                              : 2
  1-bit latch                                           : 2
- 5-bit latch                                           : 1
 # Comparators                                          : 1
  8-bit comparator less                                 : 1
 # Multiplexers                                         : 1
@@ -305,26 +302,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-
-Synthesizing (advanced) Unit <Instr_Memory>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_instrunction_mem> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 256-word x 16-bit                   |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <write_enable>  | high     |
-    |     addrA          | connected to signal <instruction_add> |          |
-    |     diA            | connected to signal <instruction_in> |          |
-    |     doA            | connected to signal <instruction_out> |          |
-    -----------------------------------------------------------------------
-    | Port B                                                              |
-    |     aspect ratio   | 256-word x 16-bit                   |          |
-    |     addrB          | connected to signal <contador>      |          |
-    |     doB            | connected to signal <instruction_deb> |          |
-    -----------------------------------------------------------------------
-Unit <Instr_Memory> synthesized (advanced).
 
 Synthesizing (advanced) Unit <Reg_File>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -399,8 +376,7 @@ Unit <SyncRAM> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
- 256x16-bit dual-port distributed RAM                  : 1
+# RAMs                                                 : 4
  256x8-bit single-port block RAM                       : 1
  4x8-bit dual-port distributed RAM                     : 3
 # Adders/Subtractors                                   : 2
@@ -410,9 +386,8 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Registers                                            : 3
  Flip-Flops                                            : 3
-# Latches                                              : 3
+# Latches                                              : 2
  1-bit latch                                           : 2
- 5-bit latch                                           : 1
 # Comparators                                          : 1
  8-bit comparator less                                 : 1
 # Multiplexers                                         : 1
@@ -426,34 +401,17 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <contador_0> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <contador_2> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <contador_3> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <contador_4> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <contador_1> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem2> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem3> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem4> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem7> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem5> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem6> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem8> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem9> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem12> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem10> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem11> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem13> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem14> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem15> of sequential type is unconnected in block <Main>.
-WARNING:Xst:2677 - Node <IM/Mram_instrunction_mem16> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <ram/Mram_mem_data> of sequential type is unconnected in block <Main>.
 
 Optimizing unit <Main> ...
 
 Optimizing unit <ALU> ...
+WARNING:Xst:1294 - Latch <alu/_old_overflow_8> is equivalent to a wire in block <Main>.
+WARNING:Xst:1294 - Latch <alu/_old_underflow_9> is equivalent to a wire in block <Main>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -488,38 +446,31 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 53
+# IOs                              : 52
 
 Cell Usage :
-# BELS                             : 486
+# BELS                             : 82
 #      GND                         : 1
-#      INV                         : 1
-#      LUT1                        : 7
-#      LUT2                        : 12
-#      LUT2_L                      : 3
-#      LUT3                        : 166
-#      LUT3_D                      : 9
-#      LUT3_L                      : 2
-#      LUT4                        : 91
-#      LUT4_D                      : 21
-#      LUT4_L                      : 4
-#      MUXCY                       : 23
-#      MUXF5                       : 89
-#      MUXF6                       : 30
+#      LUT1                        : 8
+#      LUT2                        : 9
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 12
+#      LUT4                        : 13
+#      LUT4_D                      : 4
+#      MUXCY                       : 15
 #      VCC                         : 1
-#      XORCY                       : 26
-# FlipFlops/Latches                : 13
+#      XORCY                       : 17
+# FlipFlops/Latches                : 11
 #      FDE                         : 3
 #      FDRE                        : 8
-#      LDE_1                       : 2
-# RAMS                             : 266
-#      RAM16X1D                    : 265
-#      RAMB16_S9                   : 1
+# RAMS                             : 24
+#      RAM16X1D                    : 24
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 48
-#      IBUF                        : 28
-#      OBUF                        : 20
+# IO Buffers                       : 22
+#      IBUF                        : 3
+#      OBUF                        : 19
 =========================================================================
 
 Device utilization summary:
@@ -527,14 +478,13 @@ Device utilization summary:
 
 Selected Device : 3s500eft256-5 
 
- Number of Slices:                      172  out of   4656     3%  
- Number of Slice Flip Flops:             13  out of   9312     0%  
- Number of 4 input LUTs:                846  out of   9312     9%  
-    Number used as logic:               316
-    Number used as RAMs:                530
- Number of IOs:                          53
- Number of bonded IOBs:                  49  out of    190    25%  
- Number of BRAMs:                         1  out of     20     5%  
+ Number of Slices:                       26  out of   4656     0%  
+ Number of Slice Flip Flops:             11  out of   9312     0%  
+ Number of 4 input LUTs:                 96  out of   9312     1%  
+    Number used as logic:                48
+    Number used as RAMs:                 48
+ Number of IOs:                          52
+ Number of bonded IOBs:                  23  out of    190    12%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -555,16 +505,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------+-----------------------------+-------+
-Clock Signal                         | Clock buffer(FF name)       | Load  |
--------------------------------------+-----------------------------+-------+
-clk                                  | BUFGP                       | 277   |
-alu_function<1>(UC/alu_function<1>:O)| NONE(*)(alu/_old_overflow_8)| 2     |
--------------------------------------+-----------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 35    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -574,10 +519,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 14.637ns (Maximum Frequency: 68.321MHz)
-   Minimum input arrival time before clock: 15.847ns
-   Maximum output required time after clock: 6.424ns
-   Maximum combinational path delay: 6.039ns
+   Minimum period: 8.719ns (Maximum Frequency: 114.686MHz)
+   Minimum input arrival time before clock: 2.544ns
+   Maximum output required time after clock: 5.203ns
+   Maximum combinational path delay: 5.910ns
 
 Timing Detail:
 --------------
@@ -585,163 +530,105 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 14.637ns (frequency: 68.321MHz)
-  Total number of paths / destination ports: 580940 / 1371
+  Clock period: 8.719ns (frequency: 114.686MHz)
+  Total number of paths / destination ports: 8369 / 142
 -------------------------------------------------------------------------
-Delay:               14.637ns (Levels of Logic = 15)
-  Source:            PC_3 (FF)
+Delay:               8.719ns (Levels of Logic = 12)
+  Source:            PC_2 (FF)
   Destination:       ALU_Flags_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: PC_3 to ALU_Flags_2
+  Data Path: PC_2 to ALU_Flags_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             4   0.514   0.529  PC_3 (PC_3)
-     LUT3:I2->O          723   0.612   1.198  instr_address<3>1 (instr_address<3>)
-     RAM16X1D:A3->SPO      1   1.065   0.426  IM/Mram_instrunction_mem241 (N498)
-     LUT3:I1->O            1   0.612   0.000  inst_LPM_MUX15_8 (inst_LPM_MUX15_8)
-     MUXF5:I0->O           1   0.278   0.000  inst_LPM_MUX15_6_f5 (inst_LPM_MUX15_6_f5)
-     MUXF6:I0->O           1   0.451   0.387  inst_LPM_MUX15_4_f6 (inst_LPM_MUX15_4_f6)
-     LUT4:I2->O           16   0.612   1.031  Inst<15>1 (Inst<15>)
-     LUT4:I0->O           12   0.612   0.820  UC/is_imm_or00001_1 (UC/is_imm_or00001)
-     LUT4:I3->O            1   0.612   0.000  alu/Msub__AUX_5_lut<0> (alu/Msub__AUX_5_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  alu/Msub__AUX_5_cy<0> (alu/Msub__AUX_5_cy<0>)
-     MUXCY:CI->O           1   0.051   0.000  alu/Msub__AUX_5_cy<1> (alu/Msub__AUX_5_cy<1>)
-     XORCY:CI->O           1   0.699   0.387  alu/Msub__AUX_5_xor<2> (alu/_AUX_5<2>)
-     LUT4_D:I2->LO         1   0.612   0.130  alu/_old_result_7<2>4 (N1081)
-     LUT3:I2->O            1   0.612   0.387  alu/_old_result_7<2>46 (result<2>)
-     LUT4_L:I2->LO         1   0.612   0.103  alu/flags_2_and000028_SW0 (N181)
+     FDRE:C->Q            11   0.514   0.796  PC_2 (PC_2)
+     LUT4:I3->O            1   0.612   0.387  input2_ALU<0>1_SW1 (N9)
+     LUT4:I2->O            8   0.612   0.643  I_M/data<7>1 (Inst<7>)
+     RAM16X1D:DPRA0->DPO    1   0.612   0.387  RF/Mram_registers_ren1 (read_data2<0>)
+     LUT3:I2->O            1   0.612   0.000  alu/Madd__AUX_3_lut<0> (alu/Madd__AUX_3_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  alu/Madd__AUX_3_cy<0> (alu/Madd__AUX_3_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  alu/Madd__AUX_3_cy<1> (alu/Madd__AUX_3_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  alu/Madd__AUX_3_cy<2> (alu/Madd__AUX_3_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  alu/Madd__AUX_3_cy<3> (alu/Madd__AUX_3_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  alu/Madd__AUX_3_cy<4> (alu/Madd__AUX_3_cy<4>)
+     XORCY:CI->O           2   0.699   0.383  alu/Madd__AUX_3_xor<5> (result<5>)
+     LUT4:I3->O            1   0.612   0.360  alu/flags_2_and000028_SW0 (N7)
      LUT4:I3->O            1   0.612   0.000  alu/flags_2_and000028 (flags_rnm0<2>)
      FDE:D                     0.268          ALU_Flags_2
     ----------------------------------------
-    Total                     14.637ns (9.239ns logic, 5.398ns route)
-                                       (63.1% logic, 36.9% route)
+    Total                      8.719ns (5.763ns logic, 2.956ns route)
+                                       (66.1% logic, 33.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 971268 / 1636
+  Total number of paths / destination ports: 24 / 24
 -------------------------------------------------------------------------
-Offset:              15.847ns (Levels of Logic = 16)
+Offset:              2.544ns (Levels of Logic = 1)
   Source:            isntruction_wenable (PAD)
-  Destination:       ALU_Flags_2 (FF)
+  Destination:       PC_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: isntruction_wenable to ALU_Flags_2
+  Data Path: isntruction_wenable to PC_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            53   1.106   1.148  isntruction_wenable_IBUF (isntruction_wenable_IBUF)
-     LUT3:I1->O          723   0.612   1.198  instr_address<3>1 (instr_address<3>)
-     RAM16X1D:A3->SPO      1   1.065   0.426  IM/Mram_instrunction_mem241 (N498)
-     LUT3:I1->O            1   0.612   0.000  inst_LPM_MUX15_8 (inst_LPM_MUX15_8)
-     MUXF5:I0->O           1   0.278   0.000  inst_LPM_MUX15_6_f5 (inst_LPM_MUX15_6_f5)
-     MUXF6:I0->O           1   0.451   0.387  inst_LPM_MUX15_4_f6 (inst_LPM_MUX15_4_f6)
-     LUT4:I2->O           16   0.612   1.031  Inst<15>1 (Inst<15>)
-     LUT4:I0->O           12   0.612   0.820  UC/is_imm_or00001_1 (UC/is_imm_or00001)
-     LUT4:I3->O            1   0.612   0.000  alu/Msub__AUX_5_lut<0> (alu/Msub__AUX_5_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  alu/Msub__AUX_5_cy<0> (alu/Msub__AUX_5_cy<0>)
-     MUXCY:CI->O           1   0.051   0.000  alu/Msub__AUX_5_cy<1> (alu/Msub__AUX_5_cy<1>)
-     XORCY:CI->O           1   0.699   0.387  alu/Msub__AUX_5_xor<2> (alu/_AUX_5<2>)
-     LUT4_D:I2->LO         1   0.612   0.130  alu/_old_result_7<2>4 (N1081)
-     LUT3:I2->O            1   0.612   0.387  alu/_old_result_7<2>46 (result<2>)
-     LUT4_L:I2->LO         1   0.612   0.103  alu/flags_2_and000028_SW0 (N181)
-     LUT4:I3->O            1   0.612   0.000  alu/flags_2_and000028 (flags_rnm0<2>)
-     FDE:D                     0.268          ALU_Flags_2
+     IBUF:I->O             8   1.106   0.643  isntruction_wenable_IBUF (isntruction_wenable_IBUF)
+     FDRE:R                    0.795          PC_0
     ----------------------------------------
-    Total                     15.847ns (9.831ns logic, 6.017ns route)
-                                       (62.0% logic, 38.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'alu_function<1>'
-  Total number of paths / destination ports: 125908 / 4
--------------------------------------------------------------------------
-Offset:              14.123ns (Levels of Logic = 20)
-  Source:            isntruction_wenable (PAD)
-  Destination:       alu/_old_underflow_9 (LATCH)
-  Destination Clock: alu_function<1> rising
-
-  Data Path: isntruction_wenable to alu/_old_underflow_9
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            53   1.106   1.148  isntruction_wenable_IBUF (isntruction_wenable_IBUF)
-     LUT3:I1->O          723   0.612   1.198  instr_address<3>1 (instr_address<3>)
-     RAM16X1D:A3->SPO      1   1.065   0.426  IM/Mram_instrunction_mem241 (N498)
-     LUT3:I1->O            1   0.612   0.000  inst_LPM_MUX15_8 (inst_LPM_MUX15_8)
-     MUXF5:I0->O           1   0.278   0.000  inst_LPM_MUX15_6_f5 (inst_LPM_MUX15_6_f5)
-     MUXF6:I0->O           1   0.451   0.387  inst_LPM_MUX15_4_f6 (inst_LPM_MUX15_4_f6)
-     LUT4:I2->O           16   0.612   1.031  Inst<15>1 (Inst<15>)
-     LUT4:I0->O           12   0.612   0.820  UC/is_imm_or00001_1 (UC/is_imm_or00001)
-     LUT4:I3->O            1   0.612   0.000  alu/Msub__AUX_5_lut<0> (alu/Msub__AUX_5_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  alu/Msub__AUX_5_cy<0> (alu/Msub__AUX_5_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<1> (alu/Msub__AUX_5_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<2> (alu/Msub__AUX_5_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<3> (alu/Msub__AUX_5_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<4> (alu/Msub__AUX_5_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<5> (alu/Msub__AUX_5_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  alu/Msub__AUX_5_cy<6> (alu/Msub__AUX_5_cy<6>)
-     MUXCY:CI->O           0   0.052   0.000  alu/Msub__AUX_5_cy<7> (alu/Msub__AUX_5_cy<7>)
-     XORCY:CI->O           2   0.699   0.532  alu/Msub__AUX_5_xor<8> (alu/_AUX_5<8>)
-     LUT4:I0->O            1   0.612   0.000  alu/old_underflow_9_mux0000_G (N1001)
-     MUXF5:I1->O           1   0.278   0.000  alu/old_underflow_9_mux0000 (alu/old_underflow_9_mux0000)
-     LDE_1:D                   0.268          alu/_old_underflow_9
-    ----------------------------------------
-    Total                     14.123ns (8.582ns logic, 5.542ns route)
-                                       (60.8% logic, 39.2% route)
+    Total                      2.544ns (1.901ns logic, 0.643ns route)
+                                       (74.7% logic, 25.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 35 / 20
+  Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
-Offset:              6.424ns (Levels of Logic = 3)
-  Source:            PC_3 (FF)
-  Destination:       ledsito (PAD)
+Offset:              5.203ns (Levels of Logic = 1)
+  Source:            RF/Mram_registers_ren_18 (RAM)
+  Destination:       registro<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: PC_3 to ledsito
+  Data Path: RF/Mram_registers_ren_18 to registro<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             4   0.514   0.651  PC_3 (PC_3)
-     LUT4:I0->O            1   0.612   0.509  finished4 (finished4)
-     LUT2:I0->O            1   0.612   0.357  finished10 (ledsito_OBUF)
-     OBUF:I->O                 3.169          ledsito_OBUF (ledsito)
+     RAM16X1D:WCLK->DPO    2   1.654   0.380  RF/Mram_registers_ren_18 (LEDS_7_OBUF)
+     OBUF:I->O                 3.169          registro_7_OBUF (registro<7>)
     ----------------------------------------
-    Total                      6.424ns (4.907ns logic, 1.517ns route)
-                                       (76.4% logic, 23.6% route)
+    Total                      5.203ns (4.823ns logic, 0.380ns route)
+                                       (92.7% logic, 7.3% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 24 / 16
+  Total number of paths / destination ports: 32 / 16
 -------------------------------------------------------------------------
-Delay:               6.039ns (Levels of Logic = 3)
-  Source:            btnLEDS (PAD)
-  Destination:       LEDS<7> (PAD)
+Delay:               5.910ns (Levels of Logic = 3)
+  Source:            reg_address<1> (PAD)
+  Destination:       registro<7> (PAD)
 
-  Data Path: btnLEDS to LEDS<7>
+  Data Path: reg_address<1> to registro<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   1.106   0.795  btnLEDS_IBUF (btnLEDS_IBUF)
-     LUT3:I0->O            1   0.612   0.357  LEDS<7>1 (LEDS_7_OBUF)
-     OBUF:I->O                 3.169          LEDS_7_OBUF (LEDS<7>)
+     IBUF:I->O             8   1.106   0.643  reg_address_1_IBUF (reg_address_1_IBUF)
+     RAM16X1D:DPRA1->DPO    2   0.612   0.380  RF/Mram_registers_ren_12 (LEDS_1_OBUF)
+     OBUF:I->O                 3.169          registro_1_OBUF (registro<1>)
     ----------------------------------------
-    Total                      6.039ns (4.887ns logic, 1.152ns route)
-                                       (80.9% logic, 19.1% route)
+    Total                      5.910ns (4.887ns logic, 1.023ns route)
+                                       (82.7% logic, 17.3% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.18 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.68 secs
  
 --> 
 
-Total memory usage is 214000 kilobytes
+Total memory usage is 212848 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   33 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :   19 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

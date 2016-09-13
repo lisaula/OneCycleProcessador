@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Sep 13 12:01:13 2016
+Tue Sep 13 15:28:13 2016
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -76,7 +76,7 @@ D6||DIFFS|IO_L15N_0|UNUSED||0|||||||||
 D7||DIFFS|IO_L14N_0/VREF_0|UNUSED||0|||||||||
 D8||DIFFS|IO_L11N_0/GCLK11|UNUSED||0|||||||||
 D9||IOB|IO/VREF_0|UNUSED||0|||||||||
-D10|ledsito|IOB|IO_L06P_0|OUTPUT|LVCMOS33|0|8|SLOW|NONE**|||LOCATED|NO|NONE|
+D10||DIFFM|IO_L06P_0|UNUSED||0|||||||||
 D11|LEDS<1>|IOB|IO_L04P_0|OUTPUT|LVCMOS33|0|8|SLOW|NONE**|||LOCATED|NO|NONE|
 D12|boton<1>|IBUF|IP_L02P_0|INPUT|LVCMOS33|0||||NONE||LOCATED|NO|NONE|
 D13|||VCCINT||||||||1.2||||

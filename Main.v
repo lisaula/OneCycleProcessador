@@ -10,11 +10,12 @@ module Main(
 	output [7:0]registro,
 	output reg[7:0]LEDS,
 	input btnLEDS,
-	input [3:0]boton,
-	output ledsito
+	input [3:0]boton
     );
 	 
-	reg[7:0]contador;
+	wire [15:0] Inst;
+	reg [7:0] PC;
+	/*reg[7:0]contador;
 	reg [7:0] PC;
 	wire [7:0]instr_address;
 	assign instr_address = isntruction_wenable ? inst_add: PC;
@@ -25,7 +26,8 @@ module Main(
 	wire finished = (PC == 255);
 	//borrar 
 	assign ledsito = finished;
-	
+	*/
+	InstructionMemory I_M(PC, Inst);
 	
 	wire reg_write;
 	wire is_move;
@@ -91,12 +93,12 @@ module Main(
 			end
 		end else begin
 			PC =0;
-			contador = 0;
+//			contador = 0;
 		end
 	end
 	
 	always @(*)begin
-		if(boton[0]) begin
+		/*if(boton[0]) begin
 			contador = 1;
 		end else if(boton[1]) begin
 			contador = 2;
@@ -106,15 +108,15 @@ module Main(
 		end
 		else if(boton[3]) begin
 			contador = 4;
-		end
+		end*/
 		
-		if(btnLEDS)
+		/*if(btnLEDS)
 			LEDS = debuggin[7:0];
 		else
-			LEDS = debuggin[15:8];
+			LEDS = debuggin[15:8];*/
 		//LEDS = inst_add;
 		//LEDS = reg_address;
-		//LEDS = registro;
+		LEDS = registro;
 	end
 	
 endmodule
