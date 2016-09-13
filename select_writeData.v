@@ -7,7 +7,7 @@ module select_writeData(
     output reg[7:0] write_data
     );
 	
-	always @ (wds) begin
+	always @ (*) begin
 		case(wds)
 			2'b00: write_data = ALU_result;
 			2'b01: write_data = read_data2;

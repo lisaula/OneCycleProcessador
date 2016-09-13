@@ -7,21 +7,24 @@ module Main(
 	input [1:0] reg_address,
 	input isntruction_wenable,
 	output [2:0]Flags,
-	output [7:0]registro
-	,output reg[7:0]LEDS
-	,input btnLEDS,
+	output [7:0]registro,
+	output reg[7:0]LEDS,
+	input btnLEDS,
+	input [3:0]boton,
 	output ledsito
     );
 	 
+	reg[7:0]contador;
 	reg [7:0] PC;
-	wire [7:0]instr_address =  isntruction_wenable? inst_add : PC;
+	wire [7:0]instr_address;
+	assign instr_address = isntruction_wenable ? inst_add: PC;
 	wire [15:0] out_inst;
 	wire [15:0]debuggin;
-	Instr_Memory IM(data_in, clk, instr_address, isntruction_wenable, out_inst, debuggin);
+	Instr_Memory IM(data_in, clk, instr_address, isntruction_wenable, out_inst, debuggin, contador);
 	wire [15:0]Inst = isntruction_wenable? 16'h0 : out_inst;
-	
+	wire finished = (PC == 255);
 	//borrar 
-	assign ledsito = isntruction_wenable;
+	assign ledsito = finished;
 	
 	
 	wire reg_write;
@@ -53,7 +56,7 @@ module Main(
 	wire [7:0] data_out;
 	SyncRAM ram(dm_write_enable, clk,read_data2,read_data1, data_out);
 	
-	wire [7:0]data_ismove = is_move? result:read_data2;
+	//wire [7:0]data_ismove = is_move? result:read_data2;
 	
 	reg [2:0]ALU_Flags;
 	wire jump;
@@ -63,6 +66,18 @@ module Main(
 	select_writeData swd(writeData_select,result,read_data2,data_out,Inst[8:1],write_data);
 	
 	always @(posedge clk)begin
+		/*if(isntruction_wenable) begin
+			instr_address = inst_add;
+		end else begin
+			instr_address = PC;
+		end*/
+		
+		/*if (is_imm) begin
+			input2_ALU = Inst[8:1];
+		end else begin
+			input2_ALU = read_data2;
+		end
+		*/
 		if(flags_write)begin
 			ALU_Flags = flags;
 		end
@@ -76,10 +91,23 @@ module Main(
 			end
 		end else begin
 			PC =0;
+			contador = 0;
 		end
 	end
 	
 	always @(*)begin
+		if(boton[0]) begin
+			contador = 1;
+		end else if(boton[1]) begin
+			contador = 2;
+		end
+		else if(boton[2]) begin
+			contador = 3;
+		end
+		else if(boton[3]) begin
+			contador = 4;
+		end
+		
 		if(btnLEDS)
 			LEDS = debuggin[7:0];
 		else

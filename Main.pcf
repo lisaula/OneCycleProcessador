@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Sep 09 20:38:51 2016
+// Written by: Map P.20131013 on Tue Sep 13 12:00:34 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -35,6 +35,10 @@ COMP "data_in<14>" LOCATE = SITE "P15" LEVEL 1;
 COMP "data_in<15>" LOCATE = SITE "R15" LEVEL 1;
 COMP "reg_address<0>" LOCATE = SITE "K13" LEVEL 1;
 COMP "reg_address<1>" LOCATE = SITE "H11" LEVEL 1;
+COMP "boton<0>" LOCATE = SITE "C13" LEVEL 1;
+COMP "boton<1>" LOCATE = SITE "D12" LEVEL 1;
+COMP "boton<2>" LOCATE = SITE "C12" LEVEL 1;
+COMP "boton<3>" LOCATE = SITE "C10" LEVEL 1;
 COMP "isntruction_wenable" LOCATE = SITE "F15" LEVEL 1;
 COMP "LEDS<0>" LOCATE = SITE "C11" LEVEL 1;
 COMP "LEDS<1>" LOCATE = SITE "D11" LEVEL 1;

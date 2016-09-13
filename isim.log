@@ -1,7 +1,8 @@
 ISim log file
-Running: C:\Users\Raim\Documents\Lab_Orga_Archivos\Processador\tb_IM_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_IM_isim_beh.wdb 
+Running: C:\Users\Raim\Documents\Lab_Orga_Archivos\Processador\tb_Main_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 Time resolution is 1 ps
 # onerror resume
 # wave add /
@@ -10,26 +11,31 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x8ef4fb42)
 This is a Full version of ISim.
+WARNING: File "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 14.  For instance tb_Main/main/, width 4 of formal port boton is not equal to width 1 of actual variable boton. 
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.

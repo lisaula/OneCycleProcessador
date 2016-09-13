@@ -1,20 +1,35 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_IM_isim_beh.exe" -prj "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_IM_beh.prj" "tb_IM" "work.glbl" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main_isim_beh.exe" -prj "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main_beh.prj" "tb_Main" "work.glbl" 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/UnitControl.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/SyncRAM.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/select_writeData.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/Reg_File.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/JumpLogic.v" into library work
 Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/Instr_Memory.v" into library work
-Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_IM.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/ALU.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/Main.v" into library work
+Analyzing Verilog file "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main.v" Line 17: Size mismatch in connection of port <boton>. Formal port size is 4-bit while actual signal size is 1-bit.
 Completed static elaboration
-Fuse Memory Usage: 102876 KB
-Fuse CPU Usage: 186 ms
+Fuse Memory Usage: 102364 KB
+Fuse CPU Usage: 202 ms
 Compiling module Instr_Memory
-Compiling module tb_IM
+Compiling module UnitControl
+Compiling module Reg_File
+Compiling module ALU
+Compiling module SyncRAM
+Compiling module JumpLogic
+Compiling module select_writeData
+Compiling module Main
+Compiling module tb_Main
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 3 Verilog Units
-Built simulation executable C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_IM_isim_beh.exe
-Fuse Memory Usage: 106440 KB
-Fuse CPU Usage: 186 ms
+Compiled 10 Verilog Units
+Built simulation executable C:/Users/Raim/Documents/Lab_Orga_Archivos/Processador/tb_Main_isim_beh.exe
+Fuse Memory Usage: 105928 KB
+Fuse CPU Usage: 218 ms

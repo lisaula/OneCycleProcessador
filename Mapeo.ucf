@@ -1,6 +1,12 @@
 //clk
 Net "clk" LOC="B8";	
 
+Net "boton[0]" LOC="C13" | IOSTANDARD = LVCMOS33;
+Net "boton[1]" LOC="D12" | IOSTANDARD = LVCMOS33;
+Net "boton[2]" LOC="C12" | IOSTANDARD = LVCMOS33;
+Net "boton[3]" LOC="C10" | IOSTANDARD = LVCMOS33;
+
+
 //instruction -> J4 && J3	
 //j3.1..4
 Net "data_in[4]" LOC ="D15" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
